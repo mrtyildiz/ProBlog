@@ -1,0 +1,45 @@
+
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+  
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>{{ object_list.Name_Type }} - {{ object_list.Blog_Name }}</h2>
+            <ol>
+              <li><a href="{% url 'index' %}">Home</a></li>
+              <li>Blog</li>
+              <li>{{ object_list.Name_Type }}</li>
+            </ol>
+          </div>
+  
+        </div>
+      </section><!-- End Breadcrumbs -->
+  
+      <!-- ======= Portfolio Details Section ======= -->
+      <section id="portfolio-details" class="portfolio-details">
+        
+        <div class="container">
+          <div class="portfolio-details-container">
+            <div>
+              <style>
+                img {
+                  max-width: 70%;
+                  height: auto;
+                }
+                </style>
+              <img src="{{ object_list.Blog_img.url }}" alt="">
+              <p>{{ object_list.date }}</p>
+            </div>
+          </div>
+         
+          <div class="portfolio-description">
+             
+            <h2>{{ object_list.Blog_Name }}</h2>
+            {% load markdown_extras %}
+              <div>
+                <p>{{ object_list.body | markdown | safe }}</p>
+              </div>
+              <hr>
+          </div>
+        </div>
+        
+      </section>

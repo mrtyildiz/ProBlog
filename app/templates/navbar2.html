@@ -1,0 +1,15 @@
+ <header id="header" class="d-flex flex-column justify-content-center">
+  {% for socials in navbar %}
+    <nav class="nav-menu">
+      <ul>
+        <li class="active"><a href="{% url 'index' %}" target="_blank"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <li><a href="{{ socials.twitter_url }}" target="_blank"><i class="bx bxl-twitter"></i> <span>Twitter</span></a></li>
+        <li><a href="{{ socials.instagram_url }}" target="_blank"><i class="bx bxl-instagram"></i> <span>İnstagram</span></a></li>
+        <li><a href="{{ socials.youtube_url }}" target="_blank"><i class="bx bxl-youtube"></i> <span>Youtube</span></a></li>
+        <li><a href="{{ socials.linkedin_url }}" target="_blank"><i class="bx bxl-linkedin"></i> <span>Linkeding</span></a></li>
+      </ul>
+    </nav><!-- .nav-menu -->
+    {% endfor %}
+  </header>
+
+

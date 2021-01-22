@@ -1,0 +1,31 @@
+{% load static %}
+<button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+  <header id="header">
+    <div class="d-flex flex-column">
+      {% for navb in navbar %}
+      <div class="profile">
+        <img src="{% static 'img/profile-img.jpg' %}" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="{% url 'index' %}">{{ navb.Name }}</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="{{ navb.twitter_url }}" class="twitter" target="_blank"><i class="bx bxl-twitter"></i></a>
+          <a href="{{ navb.instagram_url }}" class="instagram" target="_blank"><i class="bx bxl-instagram"></i></a>
+          <a href="{{ navb.youtube_url }}" class="google-plus" target="_blank"><i class="bx bxl-youtube"></i></a>
+          <a href="{{ navb.linkedin_url }}" class="linkedin" target="_blank"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+      {% endfor %}
+
+      <nav class="nav-menu">
+        <ul> 
+          <li class="active"><a href="{% url 'index' %}"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="#portfolio"><i class="bx bx-book-content"></i>Blog - Tutorials</a></li>
+          <li><a href="#services"><i class="bx bx-server"></i>Tutorials</a></li>
+          <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li>
+
+        </ul>
+      </nav>
+      <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+    </div>
+  </header>

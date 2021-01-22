@@ -1,0 +1,46 @@
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+          {% for Contact in cont %}
+          <div class="section-title">
+            <h2>{{ Contact.Name }}</h2>
+            <p>{{ Contact.Destrication }}</p>
+          </div>
+  
+          <div class="row" data-aos="fade-in">
+  
+            <div class="col-lg-5 d-flex align-items-stretch">
+              <div class="info">
+                <div class="address">
+                  <i class="icofont-google-map"></i>
+                  <h4>Location:</h4>
+                  <p>{{ Contact.Location }}</p>
+                </div>
+  
+                <div class="email">
+                  <i class="icofont-envelope"></i>
+                  <h4>Email:</h4>
+                  <p>{{ Contact.Email }}</p>
+                </div>
+  
+                <div class="phone">
+                  <i class="icofont-phone"></i>
+                  <h4>Call:</h4>
+                  <p>{{ Contact.Call }}</p>
+                </div>
+              </div>
+  
+            </div>
+  
+            <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+              <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    
+                <iframe src="{{ Contact.Maps_Link }}" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+
+              </form>
+            </div>
+  
+          </div>
+          {% endfor %}
+        </div>
+      </section><!-- End Contact Section -->
